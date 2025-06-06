@@ -1,4 +1,4 @@
-# Ejemplo-HTML-inmobiliaria
+# Estudio Juridico Inmobiliario
 
 ## Descripción
 Este proyecto es un ejemplo de una página web para una inmobiliaria, desarrollada utilizando HTML, CSS, JavaScript. La página incluye información básica sobre la empresa, propiedades disponibles y formas de contacto.
