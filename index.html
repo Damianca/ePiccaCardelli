@@ -17,6 +17,10 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+        <!-- WhatsApp floating button CSS -->
+        <link rel="stylesheet" href="css/whatsapp.css">
+        <!-- Font Awesome for WhatsApp icon -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     </head>
     <body id="page-top">
         <script>
@@ -31,7 +35,6 @@
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto my-2 my-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="#about">Acerca De</a></li>
                         <li class="nav-item"><a class="nav-link" href="#services">Servicios</a></li>
                         <li class="nav-item"><a class="nav-link" href="#portfolio">Portafolio</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
@@ -49,24 +52,13 @@
                     </div>
                     <div class="col-lg-8 align-self-baseline">
                         <p class="text-white-75 mb-5">Experiencia y conocimiento: Estudio Jurídico e Inmobiliario Picca Cardelli cuenta con un equipo altamente capacitado y experimentado en el mercado inmobiliario de Rio Segundo, lo que permite brindar a sus clientes asesoramiento experto y personalizado en la compra, venta o alquiler de propiedades</p>
-                        <a class="btn btn-primary btn-xl" href="#about">Lo que vos necesitas</a>
+                        <p class="text-white-75 mb-5" style="font-size: 1.2rem; font-weight: 600;">La casa de tus sueños está aquí!</p>
+                        <a class="btn btn-primary btn-xl" href="#services">EMPECEMOS!</a>
                     </div>
                 </div>
             </div>
         </header>
-        <!-- About-->
-        <section class="page-section bg-primary" id="about">
-            <div class="container px-4 px-lg-5">
-                <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-lg-8 text-center">
-                        <h2 class="text-white mt-0">Tenemos lo que vos necesitas!</h2>
-                        <hr class="divider divider-light" />
-                        <p class="text-white-75 mb-4">"Lo que necesitas para encontrar la casa de tus sueños esta en Estudio Jurídico e Inmobiliario Picca Cardelli"</p>
-                        <a class="btn btn-light btn-xl" href="#services">Empecemos!</a>
-                    </div>
-                </div>
-            </div>
-        </section>
+
         <!-- Services-->
         <section class="page-section" id="services">
             <div class="container px-4 px-lg-5">
@@ -181,7 +173,7 @@
         <section class="page-section bg-dark text-white">
             <div class="container px-4 px-lg-5 text-center">
                 <h2 class="mb-4">Descubra mas inmuebles con nuestro catalogo.</h2>
-                <a class="btn btn-light btn-xl" href="./en_construccion/index.html">Descargar Catalogo</a>
+                <a class="btn btn-light btn-xl" href="assets/pdf/Catalogo - Estudio Juridico e Inmobiliario Picca Cardelli.pdf" download>Descargar Catalogo</a>
             </div>
         </section>
         <!-- Contact-->
@@ -240,5 +232,10 @@
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+        
+        <!-- WhatsApp Floating Button -->
+        <a href="https://api.whatsapp.com/send?phone=3572542289&text=%C2%A1Hola!%20Quisiera%20agendar%20una%20cita%20o%20consultar%20sobre%20propiedades%20disponibles.%20%C2%BFPodr%C3%ADan%20ayudarme?" class="float" target="_blank">
+            <i class="fa fa-whatsapp my-float"></i>
+        </a>
     </body>
 </html>
