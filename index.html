@@ -28,6 +28,9 @@
               location.href = "https://estudiopiccacardelli.com.ar" + location.pathname;
             }
         </script>
+        
+
+        
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
             <div class="container px-4 px-lg-5">
@@ -188,7 +191,7 @@
                 </div>
                 <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
                     <div class="col-lg-6">
-                        <form action="https://formspree.io/f/mvgrlovy" method="POST">
+                        <form id="contactForm" action="https://formspree.io/f/mvgrlovy" method="POST">
                             <div class="form-floating mb-3">
                                 <input class="form-control" name="name" type="text" placeholder="Tu nombre" required />
                                 <label for="name">Nombre Completo</label>
@@ -205,10 +208,16 @@
                                 <textarea class="form-control" name="message" placeholder="Mensaje" style="height: 10rem" required></textarea>
                                 <label for="message">Mensaje</label>
                             </div>
-                            <!-- Opcional: redirección tras enviar -->
-                            <input type="hidden" name="_next" value="https://estudiopiccacardelli.com.ar/gracias.html">
                             <div class="d-grid">
-                                <button class="btn btn-primary btn-xl" type="submit">Enviar</button>
+                                <button class="btn btn-primary btn-xl" type="submit" id="submitBtn">Enviar</button>
+                            </div>
+                            <div id="successMessage" class="alert alert-success mt-3" style="display: none;">
+                                <i class="bi bi-check-circle me-2"></i>
+                                ¡Gracias por tu mensaje! Pronto nos pondremos en contacto con vos.
+                            </div>
+                            <div id="errorMessage" class="alert alert-danger mt-3" style="display: none;">
+                                <i class="bi bi-exclamation-triangle me-2"></i>
+                                Hubo un error al enviar el mensaje. Por favor, intenta nuevamente.
                             </div>
                         </form>
                     </div>
@@ -223,7 +232,10 @@
         </section>
         <!-- Footer-->
         <footer class="bg-light py-5">
-            <div class="container px-4 px-lg-5"><div class="small text-center text-muted">Copyright &copy; 2025 - CDC's Software</div></div>
+            <div class="container px-4 px-lg-5">
+                <div class="small text-center text-muted">Copyright &copy; 2025 - CDC's Software</div>
+                <div class="text-center text-muted mt-2" style="font-size: 0.8rem; opacity: 0.7;">Última actualización: 01/08/2025 - 17:53</div>
+            </div>
         </footer>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -237,5 +249,53 @@
         <a href="https://api.whatsapp.com/send?phone=3572542289&text=%C2%A1Hola!%20Quisiera%20agendar%20una%20cita%20o%20consultar%20sobre%20propiedades%20disponibles.%20%C2%BFPodr%C3%ADan%20ayudarme?" class="float" target="_blank">
             <i class="fa fa-whatsapp my-float"></i>
         </a>
+        
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const form = document.getElementById('contactForm');
+                const submitBtn = document.getElementById('submitBtn');
+                const successMessage = document.getElementById('successMessage');
+                const errorMessage = document.getElementById('errorMessage');
+                
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    successMessage.style.display = 'none';
+                    errorMessage.style.display = 'none';
+                    
+                    const originalText = submitBtn.innerHTML;
+                    submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>Enviando...';
+                    submitBtn.disabled = true;
+                    
+                    const formData = new FormData(form);
+                    
+                    fetch(form.action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    })
+                    .then(response => {
+                        if (response.ok) {
+                            form.reset();
+                            successMessage.style.display = 'block';
+                            successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        } else {
+                            throw new Error('Error en el envío');
+                        }
+                    })
+                    .catch(error => {
+                        errorMessage.style.display = 'block';
+                        errorMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    })
+                    .finally(() => {
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.disabled = false;
+                    });
+                });
+            });
+        </script>
+
     </body>
 </html>
