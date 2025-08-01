@@ -11325,6 +11325,55 @@ hr.divider-light {
   font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-weight: 700;
   color: #212529;
+  font-size: 0.9rem;
+  line-height: 1.1;
+  flex: 1;
+  margin-right: 0;
+}
+@media (max-width: 767.98px) {
+  #mainNav .navbar-brand {
+    font-size: 0.85rem;
+    line-height: 1.0;
+    flex: 1;
+    margin-right: 0;
+    margin-left: 0.5rem;
+  }
+  #mainNav .navbar-toggler {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+    flex-shrink: 0;
+    margin-left: 0.2rem;
+  }
+}
+@media (max-width: 575.98px) {
+  #mainNav .navbar-brand {
+    font-size: 0.7rem;
+    line-height: 1.0;
+    flex: 1;
+    margin-right: 0;
+    margin-left: 0.3rem;
+  }
+  #mainNav .navbar-toggler {
+    padding: 0.2rem 0.4rem;
+    font-size: 0.8rem;
+    flex-shrink: 0;
+    margin-left: 0.15rem;
+  }
+}
+@media (max-width: 375px) {
+  #mainNav .navbar-brand {
+    font-size: 0.65rem;
+    line-height: 1.0;
+    flex: 1;
+    margin-right: 0;
+    margin-left: 0.2rem;
+  }
+  #mainNav .navbar-toggler {
+    padding: 0.15rem 0.35rem;
+    font-size: 0.75rem;
+    flex-shrink: 0;
+    margin-left: 0.1rem;
+  }
 }
 #mainNav .navbar-nav .nav-item .nav-link {
   color: #6c757d;
@@ -11386,6 +11435,7 @@ header.masthead {
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-size: cover;
+  min-height: 100vh;
 }
 header.masthead h1, header.masthead .h1 {
   font-size: 2.25rem;
